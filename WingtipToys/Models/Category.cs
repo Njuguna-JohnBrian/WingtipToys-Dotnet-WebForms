@@ -7,5 +7,15 @@ namespace WingtipToys.Models
 {
     public class Category
     {
+        [ScaffoldColumn(false)]
+        public int CategoryId { get; set; }
+
+        [Required, StringLength(1000), Display(Name = "Name")] 
+        public string CategoryName { get; set; }
+
+        [Display(Name = "Product Description")]
+        public string Description { get; set; }
+
+        public virtual ICollection<Product> Products { get; set; }
     }
 }
