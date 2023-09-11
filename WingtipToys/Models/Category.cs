@@ -8,7 +8,7 @@ namespace WingtipToys.Models
     public class Category
     {
         [ScaffoldColumn(false)]
-        public int CategoryId { get; set; }
+        public int CategoryID { get; set; }
 
         [Required, StringLength(1000), Display(Name = "Name")] 
         public string CategoryName { get; set; }

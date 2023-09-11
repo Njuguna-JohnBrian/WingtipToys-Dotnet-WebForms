@@ -9,7 +9,7 @@ namespace WingtipToys.Models
     public class Product
     {
         [ScaffoldColumn(false)]
-        public int Id { get; set; }
+        public int ProductID { get; set; }
 
         [Required, StringLength(1000), Display(Name = "Name")] 
         public string ProductName { get; set; }
