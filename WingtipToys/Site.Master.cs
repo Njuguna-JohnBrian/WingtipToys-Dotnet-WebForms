@@ -7,6 +7,8 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using System.Linq;
+using WingtipToys.Models;
 
 namespace WingtipToys
 {
@@ -46,6 +48,13 @@ namespace WingtipToys
             }
 
             Page.PreLoad += master_Page_PreLoad;
+        }
+        
+        public IQueryable<Category> GetCategories()
+        {
+            var _db = new WingtipToys.Models.ProductContext();
+            IQueryable<Category> query = _db.Categories;
+            return query;
         }
 
         protected void master_Page_PreLoad(object sender, EventArgs e)
